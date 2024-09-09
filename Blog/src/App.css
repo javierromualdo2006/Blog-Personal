@@ -1,0 +1,76 @@
+/* App.css */
+
+/* Modo claro */
+.light-mode {
+  background-color: white;
+  color: black;
+}
+
+/* Modo oscuro */
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+/* Estilo general de la aplicación */
+.App {
+  text-align: center;
+}
+
+.Header {
+  padding: 20px;
+}
+
+nav a {
+  margin: 0 15px;
+  color: inherit; /* Asegura que el color del enlace cambie con el modo */
+  text-decoration: none;
+}
+
+.theme-toggle {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Estilos para las tarjetas */
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Permite que las tarjetas se acomoden en múltiples líneas si es necesario */
+}
+
+.card {
+  background-color: #bebebe;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Estilos adicionales para modo oscuro */
+.dark-mode .card {
+  background-color: #333;
+  color: white;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+/* Ajustes para enlaces en modo oscuro */
+.dark-mode nav a {
+  color: white;
+}
+
+/* Estilos adicionales */
+section {
+  padding: 40px;
+}

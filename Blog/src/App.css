@@ -1,76 +1,84 @@
-/* App.css */
-
-/* Modo claro */
-.light-mode {
-  background-color: white;
-  color: black;
-}
-
-/* Modo oscuro */
-.dark-mode {
-  background-color: black;
-  color: white;
-}
-
-/* Estilo general de la aplicación */
-.App {
-  text-align: center;
-}
-
-.Header {
-  padding: 20px;
-}
-
-nav a {
-  margin: 0 15px;
-  color: inherit; /* Asegura que el color del enlace cambie con el modo */
-  text-decoration: none;
-}
-
-.theme-toggle {
-  margin-top: 20px;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-/* Estilos para las tarjetas */
-.card-container {
+/* Estilo global */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000; /* Fondo negro */
+  color: #fff; /* Texto blanco */
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap; /* Permite que las tarjetas se acomoden en múltiples líneas si es necesario */
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.card {
-  background-color: #bebebe;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 200px;
-  transition: background-color 0.3s, color 0.3s;
+/* Título principal y descripción */
+.header {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
-.card img {
-  width: 100%;
-  border-radius: 8px;
+.header h1 {
+  font-size: 48px;
   margin-bottom: 10px;
+  animation: fadeInDown 0.8s forwards; /* Animación al abrir la página */
 }
 
-/* Estilos adicionales para modo oscuro */
-.dark-mode .card {
-  background-color: #333;
-  color: white;
-  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+.header p {
+  font-size: 20px;
+  margin: 0;
+  animation: fadeInDown 1s forwards; /* Animación con un ligero retraso */
 }
 
-/* Ajustes para enlaces en modo oscuro */
-.dark-mode nav a {
-  color: white;
+/* Contenedor de las tarjetas */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Distribución de las tarjetas */
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+  padding: 20px;
 }
 
-/* Estilos adicionales */
-section {
-  padding: 40px;
+/* Estilo de las tarjetas */
+.card {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s forwards; /* Animación al cargar la página */
+}
+
+/* Título centrado dentro de cada tarjeta */
+.card h2 {
+  text-align: center;
+  margin: 0 0 10px;
+  font-size: 24px;
+}
+
+/* Animación de entrada para el título y las tarjetas */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efecto hover sobre las tarjetas */
+.card:hover {
+  transform: scale(1.05); /* Efecto de agrandar al pasar el cursor */
 }

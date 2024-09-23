@@ -1,3 +1,3 @@
 export default function MainContent(){
-    return <main></main>
+    return <main>soy el main</main>
 }
